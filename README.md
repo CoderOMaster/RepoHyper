@@ -76,3 +76,24 @@ We can evaluate the model using the following script
 ```bash
 python3 scripts/evaluate_llm.py --data data/repobench/repos_graphs_matched_retrieved --model "gpt3.5" --num-workers 8
 ```
+
+# Citing RepoHyper
+More details can be found in our [paper](https://arxiv.org/abs/2406.11912). 
+
+If you're using RepoHyper in your research or applications, please cite using this BibTeX:
+```bibtex
+@article{phan2024repohyper,
+  title={Repohyper: Better context retrieval is all you need for repository-level code completion},
+  author={Phan, Huy N and Phan, Hoang N and Nguyen, Tien N and Bui, Nghi DQ},
+  journal={arXiv preprint arXiv:2403.06095},
+  year={2024}
+}
+```
+
+# Contact us
+If you have any questions, comments or suggestions, please do not hesitate to contact us.
+- Website: [fpt-aicenter](https://www.fpt-aicenter.com/ai-residency/)
+- Email: bdqnghi@gmail.com
+
+# License
+[MIT License](LICENSE)
