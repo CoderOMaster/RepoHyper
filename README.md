@@ -2,7 +2,7 @@
 
 
 
-# RepoHyper: Better Context Retrieval Is All You Need for Repository-Level Code Completion
+# RepoHyper: Search-Expand-Refine on Semantic Graphs for Repository-Level Code Completion 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) [![Python 3.8](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/) [![arXiv](https://img.shields.io/badge/📝-Paper-red)](https://arxiv.org/abs/2403.06095)
 </div>
 
