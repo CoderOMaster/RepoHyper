@@ -1,4 +1,4 @@
-from utils import load_data
+from src.utils import load_data
 import os
 from joblib import Parallel, delayed
 from tqdm import tqdm
