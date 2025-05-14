@@ -77,41 +77,25 @@ def load_data(task:str, language:str, settings: Union[str, list]):
                     "train": {},
                     "test": {}
                 }
-                with gzip.open(f"{ROOT}/{task}/{language}/{setting}_train_easy_1.gz", 'rb') as f:
-                    train_easy_1 = pickle.load(f)
-                with gzip.open(f"{ROOT}/{task}/{language}/{setting}_train_easy_2.gz", 'rb') as f:
-                    train_easy_2 = pickle.load(f)
-                dic['train']['easy'] = train_easy_1['easy'] + train_easy_2['easy']
-
-                with gzip.open(f"{ROOT}/{task}/{language}/{setting}_train_hard_1.gz", 'rb') as f:
-                    train_hard_1 = pickle.load(f)
-                with gzip.open(f"{ROOT}/{task}/{language}/{setting}_train_hard_2.gz", 'rb') as f:
-                    train_hard_2 = pickle.load(f)
-                dic['train']['hard'] = train_hard_1['hard'] + train_hard_2['hard']
-
-                with gzip.open(f"{ROOT}/{task}/{language}/{setting}_test.gz", 'rb') as f:
-                    test = pickle.load(f)
-                dic['test'] = test['test']
-        
+                
+                with gzip.open(f"{ROOT}/{task}/{language}/{setting}.pkl.gz", 'rb') as f:
+                    train_easy = pickle.load(f)
             
-                data[setting] = dic
+                dic["train"] = train_easy["train"]  # Contains 'easy' and 'hard'
+                dic["test"] = train_easy["test"]
         
+                data[setting] = dic
+                
             else:
                 dic = {
                     "train": {},
                     "test": {}
                 }
-                with gzip.open(f"{ROOT}/{task}/{language}/{setting}_train_easy.gz", 'rb') as f:
+                with gzip.open(f"{ROOT}/{task}/{language}/{setting}.pkl.gz", 'rb') as f:
                     train_easy = pickle.load(f)
-                dic['train']['easy'] = train_easy['easy']
-
-                with gzip.open(f"{ROOT}/{task}/{language}/{setting}_train_hard.gz", 'rb') as f:
-                    train_hard = pickle.load(f)
-                dic['train']['hard'] = train_hard['hard']
-
-                with gzip.open(f"{ROOT}/{task}/{language}/{setting}_test.gz", 'rb') as f:
-                    test = pickle.load(f)
-                dic['test'] = test['test']
+            
+                dic["train"] = train_easy["train"]  # Contains 'easy' and 'hard'
+                dic["test"] = train_easy["test"]
         
                 data[setting] = dic
 
